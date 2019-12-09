@@ -20,7 +20,10 @@ $ npm run start
 * Go to todo-client, install dependencies and run project:
 
 ```
-$ cd todo-server
+$ cd todo-client
 $ npm install
 $ ng serve
 ```
+
+* Go to  http://localhost:4200/ 
+* Server side port: http://localhost:3000/ 
