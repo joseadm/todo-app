@@ -2137,12 +2137,8 @@
         "version": "a1170d36e8034cf4e5cae87653805c9e193933ca2ce5d870701ac692b7fa48a6",
         "signature": "a0174c9fe26769d235a5c0138c74ea8720d86ba4beb0967bd3f0f455cc993c32"
       },
-      "../src/todo/dto/create-todo.ts": {
-        "version": "15ba4687c5eb2910d8ab3870bfd6e4428f18ec6d707dd0fadbb84c14ec2fb48f",
-        "signature": "5eec0fc0f6a5946b20f2c4ec602bc304b7cb7f01f8a99e6e5d964f12076b84da"
-      },
       "../src/todo/todo.controller.ts": {
-        "version": "476b4a8322992ee98dd53272d8a71d1c02d69a16af58018e8ecec573b05b7ce1",
+        "version": "66f0cf1e8acfcff41f5a8b3449b7336a656dd38249a4242009194aeca4ff1147",
         "signature": "91e11d38f741b4a70ad66ab366113dfd8badac3e64b784b245b4127e6eb8927b"
       },
       "../src/todo/todo.module.ts": {
@@ -6921,16 +6917,9 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/todo/dto/create-todo.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/todo/todo.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/todo/todo.service.ts",
-        "../src/todo/dto/create-todo.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",

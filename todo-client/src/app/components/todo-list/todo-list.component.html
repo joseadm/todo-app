@@ -12,7 +12,7 @@
           <strong class="title">Title: </strong><br>
           <span [ngClass]="{'hide':(editMode && active==i),'completed':todo.completed}" [ngStyle]="{'text-decoration':todo.completed ? 'line-through' : 'none' }">
               {{todo.title}}
-          </span>
+          </span><br>
           <strong class="title">Description: </strong><br>
           <span [ngClass]="{'hide':!(editMode && active==i)}" class="update-form">
               {{todo.description}}
