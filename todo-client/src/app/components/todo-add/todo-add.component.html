@@ -1,0 +1,19 @@
+<div>
+<div class="row">
+    <div class="form-group col-6">
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="title" class="form-control" placeholder="Enter title..." id="title">
+  </div>
+    <div class="form-group col-6">
+    <label>To Do Date:</label>
+    <input type="date" [(ngModel)]="todoDate" class="form-control" placeholder="Enter todo date..." id="todoDate">
+  </div>
+</div>
+<div class="row">
+    <div class="form-group col-12">
+    <label>Description:</label>
+    <textarea [(ngModel)]="description" class="form-control" id="description" rows="3"></textarea>
+  </div>
+</div>
+<button (click)="addTask()" class="btn btn-primary">Add</button>
+</div>
