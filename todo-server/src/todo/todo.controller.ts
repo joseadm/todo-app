@@ -15,8 +15,13 @@ export class TodoController {
 
   @Post()
   async create(@Body() body) {
-    console.log(body);
     const todo = await this.todoService.create(body);
+    return todo;
+  }
+
+  @Put(':id')
+  async update(@Param('id') id, @Body() body) {
+    const todo = await this.todoService.update(id, body.completed);
     return todo;
   }
 

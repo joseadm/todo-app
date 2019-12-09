@@ -20,6 +20,11 @@ export class TodoService {
     return this.todoRepository.save(todo);
   }
 
+  // Update data from database
+  update(id: number, completed: boolean) {
+    return this.todoRepository.update(id, {completed: !completed});
+  }
+
   // Remove data from database
   remove(id: number) {
     return this.todoRepository.delete(id);

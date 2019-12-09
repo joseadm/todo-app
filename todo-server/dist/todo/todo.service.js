@@ -26,6 +26,9 @@ let TodoService = class TodoService {
     create(todo) {
         return this.todoRepository.save(todo);
     }
+    update(id, completed) {
+        return this.todoRepository.update(id, { completed: !completed });
+    }
     remove(id) {
         return this.todoRepository.delete(id);
     }

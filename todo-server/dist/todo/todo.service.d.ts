@@ -5,5 +5,6 @@ export declare class TodoService {
     constructor(todoRepository: Repository<Todo>);
     findAll(): Promise<Todo[]>;
     create(todo: Todo): Promise<Todo>;
+    update(id: number, completed: boolean): Promise<import("typeorm").UpdateResult>;
     remove(id: number): Promise<import("typeorm").DeleteResult>;
 }

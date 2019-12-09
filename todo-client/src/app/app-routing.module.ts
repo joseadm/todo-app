@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: TodoListComponent
+    component: TodoComponent
   }
 ];
 

@@ -23,8 +23,11 @@ let TodoController = class TodoController {
         return todos;
     }
     async create(body) {
-        console.log(body);
         const todo = await this.todoService.create(body);
+        return todo;
+    }
+    async update(id, body) {
+        const todo = await this.todoService.update(id, body.completed);
         return todo;
     }
     async remove(id) {
@@ -45,6 +48,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], TodoController.prototype, "create", null);
+__decorate([
+    common_1.Put(':id'),
+    __param(0, common_1.Param('id')), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], TodoController.prototype, "update", null);
 __decorate([
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),

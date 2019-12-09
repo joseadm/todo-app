@@ -1,57 +1,30 @@
-import { Injectable } from '@angular/core';
-import {Todo} from '../models/todo';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Todo } from "../models/todo";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class TodoService {
+  baseUrl: string;
 
-
-  todos: Todo[] = [];
-constructor() { }
-// Simulate POST /todos
-addTodo(todo: Todo): TodoService {
-  if (!todo.id) {
-    todo.id = ++this.lastId;
+  constructor(private http: HttpClient) {
+    this.baseUrl = "http://localhost:3000/todo/";
   }
-  this.todos.push(todo);
-  return this;
-}
 
-// Simulate DELETE /todos/:id
-deleteTodoById(id: number): TodoService {
-  this.todos = this.todos
-    .filter(todo => todo.id !== id);
-  return this;
-}
-
-// Simulate PUT /todos/:id
-updateTodoById(id: number, values: Object = {}): Todo {
-  let todo = this.getTodoById(id);
-  if (!todo) {
-    return null;
+  addTodo(todo: Todo) {
+    return this.http.post<Todo>(this.baseUrl, todo);
   }
-  Object.assign(todo, values);
-  return todo;
-}
 
-// Simulate GET /todos
-getAllTodos(): Todo[] {
-  return this.todos;
-}
+  getTodos() {
+    return this.http.get<Todo[]>(this.baseUrl);
+  }
 
-// Simulate GET /todos/:id
-getTodoById(id: number): Todo {
-  return this.todos
-    .filter(todo => todo.id === id)
-    .pop();
-}
+  updateTodo(id: string, completed: boolean) {
+    return this.http.put<Todo>(this.baseUrl + id, {completed: completed});
+  }
 
-// Toggle todo complete
-toggleTodoComplete(todo: Todo){
-  let updatedTodo = this.updateTodoById(todo.id, {
-    complete: !todo.complete
-  });
-  return updatedTodo;
-}
+  deleteTodo(id: string) {
+    return this.http.delete<Todo>(this.baseUrl + id);
+  }
 }

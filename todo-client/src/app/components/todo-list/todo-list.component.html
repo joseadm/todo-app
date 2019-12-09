@@ -1,4 +1,39 @@
-<section class="todoapp">
-{title}
+  
+  <div>
+  <ul *ngFor="let todo of (todoList|async).todo;let i=index;" class="list-group">
+  <li class="list-group-item" 
+    [ngStyle]="{'background-color':todo.completed ? 'lightgreen' : (todo.todoDate < today ? 'yellow' : 'white') }">
+    <div class="row">
+      <div class="col-2">
+          <input *ngIf="todo.completed" type="checkbox" checked="checked" (click)="updateStatus(todo.id, todo.completed)"/>
+          <input *ngIf="!todo.completed" type="checkbox" (click)="updateStatus(todo.id, todo.completed)"/>
+      </div>
+      <div class="col-4">
+          <strong class="title">Title: </strong><br>
+          <span [ngClass]="{'hide':(editMode && active==i),'completed':todo.completed}" [ngStyle]="{'text-decoration':todo.completed ? 'line-through' : 'none' }">
+              {{todo.title}}
+          </span>
+          <strong class="title">Description: </strong><br>
+          <span [ngClass]="{'hide':!(editMode && active==i)}" class="update-form">
+              {{todo.description}}
+          </span>
+      </div>
+      <div class="col-4">
+          <strong class="created-date">Created Date: </strong><br>
+          <span class="created-date">{{todo.createdDate | date:'short'}}</span><br>
+          <strong class="todo-date">To do Date: </strong><br>
+          <span class="todo-date">{{todo.todoDate | date:'short'}}</span><br>
+      </div>
+      <div class="col-2">
+          <button class="btn btn-danger" (click)="deleteTodo(todo.id)"><fa-icon [icon]="faTrashAlt"></fa-icon>
+          </button>
+      </div>
+    </div>
+  </li>
+  </ul>
+</div>
 
-</section>
+
+<ul class="list-group">
+
+</ul>
